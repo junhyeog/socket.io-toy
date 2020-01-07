@@ -1,17 +1,29 @@
 {
-  "name": "SocketioToy",
+  "name": "socketio-toy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "dev": "next -p 3000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
-    "socket.io": "^2.3.0"
+    "next": "^9.1.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-decorators": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6"
   }
 }
