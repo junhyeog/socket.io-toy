@@ -4,20 +4,8 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const Index = () => {
-  function useSocket(url) {
-    const [socket, setSocket] = useState(null)
-    useEffect(() => {
-      const socketIo = io(url);
-      setSocket(socketIo);
-      const cleanup = () => {
-        socketIo.disconnect();
-      }
-      return cleanup;
-    }, []);
-    return socket;
-  }
-
   const [nick, setNick] = React.useState('');
+
   const Button = (props) => {
     return (
       <div className="text" onClick={() => { window.location.href = `/chat?name=${nick}` }} style={{ display: props.nick === "" ? 'none' : 'block' }
@@ -26,6 +14,7 @@ const Index = () => {
       </div >
     );
   };
+
   return (
     <Background>
       <div className='title'>
