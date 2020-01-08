@@ -1,6 +1,7 @@
+node_modules/
 node_modules
 yarn.lock
 package-lock.json
-.next
+.next/
 config.js
-.vscode
+.vscode/

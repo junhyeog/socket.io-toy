@@ -4,11 +4,12 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 const Index = () => {
+  const [senderNick, setSenderNick] = React.useState('');
   const [nick, setNick] = React.useState('');
 
   const Button = (props) => {
     return (
-      <div className="text" onClick={() => { window.location.href = `/chat?name=${nick}` }} style={{ display: props.nick === "" ? 'none' : 'block' }
+      <div className="text" onClick={() => { setNick(''); setSenderNick(''); window.location.href = `/mypchefChat?senderNick=${senderNick}&nick=${nick}` }} style={{ display: props.nick === "" ? 'none' : 'block' }
       }>
         start with <span style={{ color: '#756ee8' }}>{props.nick}</span>?
       </div >
@@ -18,10 +19,14 @@ const Index = () => {
   return (
     <Background>
       <div className='title'>
-        What's your nickname?
+        From
       </div>
-      <input type='text' maxLength="8" onChange={(e) => { setNick(e.target.value); }}></input>
-      <Button nick={nick} ></Button>
+      <input type='text' maxLength="8" onChange={(e) => { setSenderNick(e.target.value); }} value={senderNick}></input>
+      <div className='title'>
+        to
+      </div>
+      <input type='text' maxLength="8" onChange={(e) => { setNick(e.target.value); }} value={nick}></input>
+      <Button nick={senderNick} ></Button>
     </Background >);
 };
 
